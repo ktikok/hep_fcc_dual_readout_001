@@ -1,9 +1,13 @@
 # do : 
-cd /fcc/tikim/HEP-FCC_dual-readout_001/dual-readout/install
+cd /fcc/tikim/hep_fcc_dual_readout_001/install
 source setenv-cc7-gcc8.sh 
 
 # for visualization : 
 ./bin/DRsim
+
+# before run simulation, you must adjust beam positon. 
+# to set the points, you can use kyuyeong_example.
+# and use findpoints.C
 
 # for calib: 
 ./bin/calib <rootfile name> 51
@@ -41,6 +45,10 @@ visualize : red, x, green, y, blue, z
 // 51>> x : 2542.6 y : 0 z : 3561.32 center_distance : 4375.83
 
 ******************************************* for barrel 51
+/DRsim/action/useHepMC True
+/DRsim/action/useCalib True
+/DRsim/action/useGPS True
+
 /DRsim/generator/randx 0
 /DRsim/generator/randy 0
 /DRsim/generator/theta -0.97694993
@@ -50,6 +58,8 @@ visualize : red, x, green, y, blue, z
 /gun/particle e-
 /gun/energy 1 eV
 /run/beamOn 1
+
+/vis/viewer/set/viewpointVector -2542.6 0 -3561.32
 ******************************************* for barrel 51
 
 -------------------------------------endcap----------------------------------------- 52

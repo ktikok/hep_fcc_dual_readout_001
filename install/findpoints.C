@@ -22,23 +22,41 @@
 // 0>> x : 2496.81, y : 0, z : 3593.58 center_distance : 4375.83
 
 void findpoints(){
-
-    double cx = 2496.81;
-    double cy = 0;
-    double cz = 3593.58;
-    double cd = 4375.83;
-
+    // std::cout << std::setprecision(10);
 
     double pi = TMath::Pi();
 
+    // 0 th
+    double cx = 3050.15 ;
+    double cy = 0 ;
+    double cz = 33.8885 ;
+    double cd = 3050.33;
+
+
+    // 52 th----------------------
+    // double cx = 2496.81;
+    // double cy = 0;
+    // double cz = 3593.58;
+    // double cd = 4375.83;
+
+    // 51 th
+    // double cx = 2542.6;
+    // double cy = 0 ;
+    // double cz = 3561.32 ;
+    // double cd = 4375.83;
+    // position of center of tower (cm)
+
     double cphi = atan(cy/cx);
     double ctheta = atan(cz/cx);
+    // position of center of tower (rad)
+
 
     double ophi = cphi+1*pi/180;
     double otheta = ctheta+1.5*pi/180;
 
     double oy = -(tan(ophi)*cx-cy)*(cd-1250)/cd;
     double oz = -(tan(otheta)*cx-cz)*(cd-1250)/cd;
+    //             proportionality
 
 
     // xpy=tan(pi/2-ophi);
@@ -67,12 +85,12 @@ void findpoints(){
     // cout << oz << '\n' << -4.7135 << endl;
     // cout << '---------------------------' << endl;
 
-    cout << '---------------------------' << endl;
-    cout << otheta << endl;
-    cout << ophi << endl;
-    cout << oy << endl;
-    cout << oz << endl;
-    cout << '---------------------------' << endl;
+    cout << "---------------------------" << endl;
+    cout << "theta : " << otheta << endl;
+    cout << "phi : " <<  ophi << endl;
+    cout << "y(cm) : " <<  oy << endl;
+    cout << "z(cm) : " <<  oz << endl;
+    cout << "---------------------------" << endl;
 
     // /DRsim/generator/theta -0.0372899;
     // /DRsim/generator/phi 0.0174533;
