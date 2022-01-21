@@ -22,7 +22,7 @@
 // 0>> x : 2496.81, y : 0, z : 3593.58 center_distance : 4375.83
 
 void findpoints(){
-    // std::cout << std::setprecision(10);
+    std::cout << std::setprecision(10);
 
     double pi = TMath::Pi();
 

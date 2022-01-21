@@ -113,7 +113,7 @@ do
         while [ "${flag:1:2}" == "ik" ]
         do 
             sleep 1m
-            flag=`condor_q -all | grep "tikim98 ID"`        
+            flag=`condor_q -all | grep "tikim98"`        
 
         done
         # #echo $((${j} - 10))
